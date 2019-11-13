@@ -1,0 +1,257 @@
+
+@import "~animate.css/animate.css";
+
+$effect: cubic-bezier(0.215, 0.61, 0.355, 1);
+
+* {
+    -webkit-box-sizing: border-box;
+	  box-sizing: border-box;
+	  -webkit-tap-highlight-color: transparent;
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    user-select: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    font-family: Arial, sans-serif;
+}
+
+
+::selection {
+    background-color: rgba(255, 153, 0, .7);
+}
+
+textarea {
+    resize: none;
+}
+button,
+textarea,
+input {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+address {
+	font-style: normal;
+}
+img {
+  width: 100%;
+}
+.section-header {
+	font-size: 1.7rem;
+	font-weight: 700;
+}
+
+.container {
+	max-width: 1150px;
+	width: 100%;
+	margin: 0 auto;
+  padding: 0 15px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 0;
+}
+
+h2 {
+  font-size: 36px;
+}
+
+p {
+	margin: 0;
+}
+
+a {
+    text-decoration: none;
+    font-size: inherit;
+    color: #000;
+    -webkit-transition: .2s;
+    -o-transition: .2s;
+    transition: .2s;
+}
+
+button {
+    border: none;
+    padding: 12px 24px;
+    background: white;
+    cursor: pointer;
+}
+
+ul {
+	padding-left: 0;
+	margin: 0;
+	list-style-type: none;
+}
+.container {
+    max-width: 1380px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+
+// Шапка
+.header {
+  height: 100vh;
+  background: url(./img/port.jpg) no-repeat 50% 50%;
+  background-size: cover;
+  background-attachment: fixed;
+  background-color: #AAA;
+  &__container {
+    padding: 30px 0;
+  }
+  .header__header-wrap {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 30px;
+    z-index: 2;
+    background-color: #fff;
+  }
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 28px;
+  
+  &__img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+}
+
+// Меню в шапке
+.menu {
+  display: flex;
+  justify-content: flex-end;
+  &__item {
+    display: inline-block;
+  }
+  &__link {
+    display: block;
+    padding: 8px;
+    font-size: 18px; 
+    margin-right: 10px;
+    transition: $effect 0.4s, border-radius $effect .8s;
+
+    &:hover {
+      background-color: #545454;
+      color: #ffffff;
+      border-radius: 15px;
+    }
+  }
+}
+
+// Соцсети в шапке
+.socials {
+  display: flex;
+  align-items: center;
+  a {    
+    display: inline-block;
+    padding: 3px 7px;
+    transition: 1s;
+    &:hover {
+      -webkit-transform: scale(1.2);
+    transform: scale(1.2);
+    -webkit-transition-timing-function: cubic-bezier(.47,2.02,.31,-.36);
+    transition-timing-function: cubic-bezier(.47,2.02,.31,-.36);
+    }
+    svg {
+      width: 25px;
+      height: 25px; 
+    }
+  }
+}
+
+.header { 
+  &__content {
+    margin-top: 190px;
+  }
+  &__text {
+    margin-top: 20px;
+  }
+}
+
+
+/* @mixin block ($da, $net) {
+  font-size: $net;
+  font-weight: $da;
+  color: #CCC;
+  display: inline-block;
+} */
+@mixin block ($sas...) {
+  padding: $sas;
+}
+
+
+// Портфолио
+.portfolio {
+  padding: 50px;
+  &__title {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  &-blocks {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__portfolio-block {
+      /* @include block(10px 15px); */
+      width: calc(20% - 10px);
+      margin: 0 10px 10px 0;
+      min-width: 200px;
+      background-color: #cccccc;
+      height: 200px;
+      overflow: hidden;
+      img {
+        transition: .3s;
+      }
+      &:hover img {
+        transform: scale(1.1);
+      }
+    }
+  }
+}
+
+/* @mixin max-screen($res) {
+  @media screen and (max-width: $res) {
+    @content;
+  }
+} */
+
+
+
+
+// Подвал сайта 
+.footer {
+  padding: 30px 0;
+  background-color: #000;
+  color: #fff;
+    .container {
+      display: flex;
+      justify-content: space-between;
+    }
+    svg path {
+      fill: #fff !important;
+    }
+    &__menu {
+      flex-direction: column;
+    }
+}
